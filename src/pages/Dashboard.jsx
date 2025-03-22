@@ -17,9 +17,10 @@ const Dashboard = () => {
             const a = location.pathname.split("/").at(-1).replaceAll("-", " ");
             if (!isNaN(parseInt(a.charAt(0), 10))) {
                 try {
+                    const BASE_URL = process.env.REACT_APP_BASE_URL
                     const res = await apiConnector(
                         "GET",
-                        `http://localhost:4000/api/v1/course/getCourseName?courseId=${a}`, // Use query parameters
+                        `${BASE_URL}/course/getCourseName?courseId=${a}`, // Use query parameters
                         null, // No body in GET requests
                         {
                             Authorisation: `Bearer ${token}` // Fix spelling (was "Authorisation")
