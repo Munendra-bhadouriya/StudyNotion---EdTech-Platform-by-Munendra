@@ -17,9 +17,9 @@ const LearningLanguageSection = () => {
               </div>
 
               <div className='flex items-center justify-center my-5 '>
-                  <img src={Know_your_progress} className='object-contain -mr-32'/>
-                  <img src={Compare_with_others } className='object-contain'/>
-                  <img src={plan_your_lesson } className='object-contain -ml-36'/>
+                  <img src={Know_your_progress} alt='Know your progress' className='object-contain -mr-32'/>
+                  <img src={Compare_with_others } alt='Compare with others' className='object-contain'/>
+                  <img src={plan_your_lesson } alt='plan your lesson' className='object-contain -ml-36'/>
               </div>
             
               <CTAButton active={true} linkto={"/signup"}>

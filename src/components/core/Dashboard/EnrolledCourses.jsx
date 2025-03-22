@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { getUserEnrolledCourses } from '../../../services/operations/profileAPI';
 import ProgressBar from '@ramonak/react-progress-bar';
@@ -10,19 +10,18 @@ const EnrolledCourses = () => {
     const { token } = useSelector((state) => state.auth);
     const navigate = useNavigate();
 
-    const getEnrolledCourses = async() => {
+    const getEnrolledCourses = useCallback(async () => {
         try {
             const response = await getUserEnrolledCourses(token);
             setEnrolledCourses(response);
-        }
-        catch (error) {
+        } catch (error) {
             console.log("Unable to fetch enrolled courses.");
         }
-    }
-
+    }, [token]);
+    
     useEffect(() => {
         getEnrolledCourses();
-    }, []);
+    }, [getEnrolledCourses]); 
     
   return (
     <div className='w-full flex flex-col items-center mx-auto max-w-[1162px]'>
@@ -59,7 +58,7 @@ const EnrolledCourses = () => {
                                     className='flex w-[40%] gap-5 cursor-pointer'
                                 
                                 >
-                                    <img src={course.thumbnail} className='w-[3.25rem] aspect-square rounded-lg'/>
+                                    <img src={course.thumbnail} alt='course thumbnail' className='w-[3.25rem] aspect-square rounded-lg'/>
                                     <div className='gap-1 flex flex-col items-start justify-center'>
                                         <p className=' font-medium text-base text-richblack-5'>{course.courseName}</p>
                                         <p className=' font-normal text-base text-richblack-300'>{course.courseDescription}</p>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Table, Tbody, Th, Thead, Tr, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { COURSE_STATUS } from '../../../.././utils/constants'
@@ -13,7 +13,6 @@ import ConfirmationModal from '../../common/ConfirmationModal';
 import { formatDate } from '../../../../services/formatDate';
 const CourseTable = ({ courses, setCourses }) => {
     
-  const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(false);
   const [confirmationModal, setConfirmationModal] = useState(null);
@@ -57,7 +56,7 @@ const CourseTable = ({ courses, setCourses }) => {
                   return <Tr key={course._id} className='flex p-4'>
                     <Td className='w-[65%] text-left flex p-4 gap-6'>
                       <img
-                        src={course?.thumbnail}
+                        src={course?.thumbnail} alt='course thumbnail'
                         className='h-[150px] w-[220px] rounded-lg object-cover'
                       />
 

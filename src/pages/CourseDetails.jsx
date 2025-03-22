@@ -10,7 +10,7 @@ import { PiInfo } from "react-icons/pi";
 import { formatDate } from '../services/formatDate';
 import { FiGlobe } from "react-icons/fi";
 import CourseDetailsCard from '../components/core/Course/CourseDetailsCard';
-import Markdown, { ReactMarkdown } from "react-markdown"
+import Markdown from "react-markdown"
 import CourseAccordianBar from '../components/core/Course/CourseAccordianBar';
 import Footer from '../components/core/common/Footer';
 
@@ -22,7 +22,6 @@ const CourseDetails = () => {
   const navigate = useNavigate();
   const { courseId } = useParams();
   const { loading } = useSelector((state) => state.profile);
-  const { paymentLoading } = useSelector((state) => state.course);
   const { cart } = useSelector((state) => state.cart);
 
   const [courseData, setCourseData] = useState(null);
@@ -56,7 +55,7 @@ const CourseDetails = () => {
   const [openIndexes, setOpenIndexes] = useState([]);
 
   const toggleAccordion = (index) => {
-    setOpenIndexes((prev) => prev.includes(index) ? prev.filter((i) => i != index) : [...prev, index]);
+    setOpenIndexes((prev) => prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]);
   };
 
   const [totalNoOfLectures, setTotalNoOfLectures] = useState(0);
@@ -99,11 +98,8 @@ const CourseDetails = () => {
   }
 
   const {
-    _id: course_id,
     courseName,
     courseDescription,
-    thumbnail,
-    price,
     whatYouWillLearn,
     courseContent,
     ratingAndReviews,
@@ -205,7 +201,7 @@ const CourseDetails = () => {
         <div className='w-full flex flex-col gap-4 max-w-[810px]'>
           <p className=' text-richblack-5 text-2xl font-semibold'>Author</p>
           <div className=' flex gap-3 items-center'>
-            <img src={instructor.image} className=' w-[3.25rem] aspect-square rounded-full'/>
+            <img src={instructor.image} alt='instructor' className=' w-[3.25rem] aspect-square rounded-full'/>
             <p className=' text-base font-medium text-richblack-5'>{instructor.firstName} {instructor.lastName}</p>
           </div>
           <div className=' text-sm font-normal text-richblack-50'>

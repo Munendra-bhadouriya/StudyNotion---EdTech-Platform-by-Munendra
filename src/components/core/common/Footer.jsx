@@ -51,7 +51,7 @@ const Footer = () => {
           
           <div className='flex w-full items-start justify-between pr-16'>
             <div className='flex flex-col gap-4'>
-              <img src={Logo} className='w-42 h-8' />
+              <img src={Logo} alt='logo' className='w-42 h-8' />
 
               <FooterHeading text={"Company"} />
 

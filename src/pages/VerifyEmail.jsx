@@ -6,7 +6,7 @@ import OTPInput from 'react-otp-input';
 const VerifyEmail = () => {
 
     const [otp, setOtp] = useState("");
-    const { loading, signupData } = useSelector((state) => state.auth);
+    const { signupData } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const formRef = useRef(null);

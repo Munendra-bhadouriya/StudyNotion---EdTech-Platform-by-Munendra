@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { ACCOUNT_TYPE } from '../../../utils/constants'
 import Tab from '../common/Tab';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { PiEyeBold, PiEyeClosedBold } from "react-icons/pi";
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../../services/operations/authAPI';

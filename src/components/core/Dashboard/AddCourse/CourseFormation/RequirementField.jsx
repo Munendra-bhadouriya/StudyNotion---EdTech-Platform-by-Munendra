@@ -9,18 +9,20 @@ const RequirementField = ({ name, label, register, errors, setValue, getValues }
 
 
     useEffect(() => {
-        if (editCourse) {
-            setRequirementList(course?.instructions);
+        if (editCourse && course?.instructions) {
+            setRequirementList(course.instructions);
         }
+    
         register(name, {
             required: true,
             validate: (value) => value.length > 0
-        })
-    }, []);
+        });
+    }, [course?.instructions, editCourse, name, register]); // ✅ Add dependencies
+    
 
     useEffect(() => {
         setValue(name, requirementList);
-    }, [requirementList])
+    }, [requirementList, name, setValue])
 
     const handleAddRequirement = () => {
         if (requirement.trim()) {

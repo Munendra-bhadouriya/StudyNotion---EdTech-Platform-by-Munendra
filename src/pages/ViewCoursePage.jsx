@@ -28,7 +28,7 @@ const ViewCourse = () => {
         }
 
         setCourseSpecificDetails();
-    }, [])
+    }, [courseId, dispatch, token])
 
   return (
     <div className='w-full flex flex-col relative'>

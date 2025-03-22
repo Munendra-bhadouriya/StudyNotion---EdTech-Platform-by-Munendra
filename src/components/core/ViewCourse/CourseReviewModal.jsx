@@ -17,14 +17,13 @@ const CourseReviewModal = ({ setReviewModal }) => {
         register,
         handleSubmit,
         setValue,
-        getValues,
         formState: {errors},
     } = useForm();
     
     useEffect(() => {
         setValue("courseExperience", "");
         setValue("courseRating", 0);
-    }, []);
+    }, [setValue]);
 
     const ratingChanged = (newRating) => {
         setValue("courseRating", newRating)
@@ -57,7 +56,7 @@ const CourseReviewModal = ({ setReviewModal }) => {
             
             <div className='w-full flex flex-col gap-6 my-6'>
                 <div className='w-full flex justify-center gap-3'>
-                    <img src={user.image} className='w-12 rounded-full aspect-square'/>
+                    <img src={user.image}alt='user' className='w-12 rounded-full aspect-square'/>
                     <div className='flex flex-col'>
                         <p className='font-medium text-richblack-5'>{user.firstName} {user.lastName}</p>
                         <p>Posting Publicly</p>

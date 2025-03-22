@@ -17,10 +17,12 @@ const PublishForm = () => {
   const { token } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (course?.status === COURSE_STATUS.PUBLISHED) {
-      setValue("public", true)
+    const courseStatus = course?.status; // Extract complex expression
+
+    if (courseStatus === COURSE_STATUS.PUBLISHED) {
+      setValue("public", true);
     }
-  }, [])
+  }, [course?.status, setValue]);  
 
 
   const handleCoursePublish = async () => {
@@ -81,6 +83,7 @@ const PublishForm = () => {
 
               <IconBtn
                 type={"submit"}
+                disabled={loading}
                 text={"Save Changes"} cutsomClasses={"bg-yellow-50 rounded-lg font-semibold tracking-wide text-lg text-richblack-900"}
                 children={<FaRegEdit/>}
               />  

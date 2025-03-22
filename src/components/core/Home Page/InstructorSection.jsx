@@ -10,7 +10,7 @@ const InstructorSection = () => {
     <div className='py-[90px]'>
         <div className='flex items-center justify-start gap-20'>
             <div className='w-[50%]'>
-                  <img src={Instructor} />
+                  <img src={Instructor} alt='instructor'/>
             </div>
             
             <div className='w-[45%]'>

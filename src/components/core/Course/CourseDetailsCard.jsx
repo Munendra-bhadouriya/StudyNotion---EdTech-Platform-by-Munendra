@@ -49,7 +49,7 @@ const CourseDetailsCard = ({ course, handleBuyCourse, setConfirmationModal }) =>
 
   return (
     <div className='w-full flex flex-col rounded-lg bg-richblack-700'>
-        <img src={thumbnail} className='max-h-[300px] min-h-[180px] w-full object-cover overflow-hidden rounded-t-lg'/>
+        <img alt='thumbnail' src={thumbnail} className='max-h-[300px] min-h-[180px] w-full object-cover overflow-hidden rounded-t-lg'/>
         
         <div className=' p-6 flex flex-col gap-4 w-full'>
             <p className=' text-richblack-5 text-3xl font-bold'>Rs. {price}</p>

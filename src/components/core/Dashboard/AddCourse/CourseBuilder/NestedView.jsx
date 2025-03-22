@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { RxDropdownMenu } from "react-icons/rx";
 import { MdOutlineFormatLineSpacing } from "react-icons/md";
 import { IoPencilSharp } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
-import { BsFillCaretUpFill } from "react-icons/bs";
 import { VscAdd } from "react-icons/vsc";
 import ConfirmationModal from '../../../common/ConfirmationModal';
 import { deleteSection, deleteSubSection } from '../../../../../services/operations/courseDetailsAPI';

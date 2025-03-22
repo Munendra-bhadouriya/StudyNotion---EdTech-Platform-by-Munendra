@@ -1,7 +1,6 @@
 import toast from "react-hot-toast";
 import {apiConnector} from '../apiconnector'
 import { courseEndpoints } from "../apis";
-import { data } from "react-router-dom";
 
 const {
     COURSE_CATEGORIES_API,

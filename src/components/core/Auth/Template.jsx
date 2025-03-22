@@ -20,8 +20,8 @@ const Template = ({title, description1, description2, image, formType, btnConten
             </div>
             
             <div className='relative w-[45%]'>
-                <img src={frame} width={585} height={531} className='z-[1] absolute top-5 left-5'/>
-                <img src={image}  className=' relative z-10 '/>
+                <img alt='frame' src={frame} width={585} height={531} className='z-[1] absolute top-5 left-5'/>
+                <img alt='education' src={image}  className=' relative z-10 '/>
             </div>
             
         </div>

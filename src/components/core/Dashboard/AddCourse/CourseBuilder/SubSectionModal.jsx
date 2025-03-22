@@ -32,13 +32,12 @@ const SubSectionModal = ({
     const { token } = useSelector((state) => state.auth);
 
     useEffect(() => {
-
         if (view || edit) {
-            setValue("lectureTitle", modalData.title);
-            setValue("lectureDesc", modalData.description);
-            setValue("lectureVideo", modalData.videoUrl);
+            setValue("lectureTitle", modalData?.title || "");
+            setValue("lectureDesc", modalData?.description || "");
+            setValue("lectureVideo", modalData?.videoUrl || "");
         }
-    }, []);
+    }, [view, edit, modalData, setValue]);
 
     const isFormUpdated = () => {
         const currentValues = getValues();

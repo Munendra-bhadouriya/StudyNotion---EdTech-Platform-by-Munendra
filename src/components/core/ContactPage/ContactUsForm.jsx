@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import CTAButton from '../Home Page/Button';
 import {apiConnector} from "../../../services/apiconnector"
 import { contactusEndpoint } from '../../../services/apis';
 import toast from 'react-hot-toast';
@@ -52,7 +51,7 @@ const ContactUsForm = () => {
                 countryCode: "",
             });
         }
-    }, [isSubmitSuccessful]);
+    }, [isSubmitSuccessful, reset]);
 
 
   return (
@@ -158,7 +157,7 @@ const ContactUsForm = () => {
                         
                     </label>
                     
-                    <button type='submit'  className={`mt-4 w-full text-ceter text-[16px] px-7 py-3 rounded-md font-semibold bg-yellow-50 text-black shadow-[inset_-2px_-2px_0_rgba(255,255,255,0.5)] hover:scale-90 transition-all duration-200 `}>Send Message</button>
+                    <button type='submit' disabled={loading} className={`mt-4 w-full text-ceter text-[16px] px-7 py-3 rounded-md font-semibold bg-yellow-50 text-black shadow-[inset_-2px_-2px_0_rgba(255,255,255,0.5)] hover:scale-90 transition-all duration-200 `}>Send Message</button>
                 </form>
             )
         }

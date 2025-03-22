@@ -5,7 +5,7 @@ import "swiper/css/free-mode"
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
-import Course_Card from './Course_Card'
+import CourseCard from './Course_Card';
 
 const CourseSlider = ({Course}) => {
   return (
@@ -25,7 +25,7 @@ const CourseSlider = ({Course}) => {
                     {
                         Course.map((course, index) => (
                             <SwiperSlide key={index }>
-                                <Course_Card course={course} Height={"h-[250px]"}/>
+                                <CourseCard course={course} Height={"h-[250px]"}/>
                             </SwiperSlide>
                         ))
                     }

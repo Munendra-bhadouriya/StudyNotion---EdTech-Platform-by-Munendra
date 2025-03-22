@@ -61,14 +61,12 @@ const ChangeProfilePicture = () => {
 
     useEffect(() => {
         setPreviewSource(user?.image);
-        const profile = 
-        console.log()
-    }, [])
+    }, [user?.image]);
 
   return (
     <div className='w-full flex bg-richblack-800 rounded-lg border border-richblack-700 p-6 gap-5 items-center'>
         <img
-            src= {previewSource} className='w-[4.875rem] aspect-square rounded-full'
+            src= {previewSource} alt='preview' className='w-[4.875rem] aspect-square rounded-full'
         />
         
         <div className='flex flex-col gap-3'>

@@ -20,7 +20,7 @@ const CartItem = ({ course }) => {
     
     <div className='w-full flex px-6 gap-5 rounded-lg items-center'>
         <div className='w-3/4 flex gap-5'>
-            <img src={course?.thumbnail} alt='thumbnail image' className=' w-[11.56rem] h-[9.25rem] rounded-lg'/>
+            <img src={course?.thumbnail} alt='thumbnail' className=' w-[11.56rem] h-[9.25rem] rounded-lg'/>
             <div className='flex flex-col justify-center gap-2'>
                 <div className='flex flex-col'>
                     <p className='font-medium text-lg capitalize'>{course?.courseName}</p>

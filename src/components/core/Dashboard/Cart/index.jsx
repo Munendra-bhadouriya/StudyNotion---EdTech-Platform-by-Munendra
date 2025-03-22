@@ -5,7 +5,7 @@ import RenderTotalAmount from './RenderTotalAmount';
 
 const Cart = () => {
 
-    const { total, totalItems } = useSelector((state) => state.cart);
+    const { totalItems } = useSelector((state) => state.cart);
 
   return (
     <div className='w-full flex flex-col items-start mx-auto px-[2rem] text-richblack-5 mt-[-22px]'>

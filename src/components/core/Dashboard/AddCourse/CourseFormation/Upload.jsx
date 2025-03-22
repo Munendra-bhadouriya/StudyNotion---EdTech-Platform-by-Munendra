@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone';
 import { FiUploadCloud } from "react-icons/fi";
 import "video-react/dist/video-react.css"

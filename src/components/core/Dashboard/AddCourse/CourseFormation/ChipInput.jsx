@@ -5,20 +5,19 @@ import { useSelector } from 'react-redux';
 const ChipInput = ({ label, name, placeholder, register, errors, setValue, getValues }) => {
     
     const {course, editCourse} = useSelector((state) => state.course);
-    const [tag, setTag] = useState("");
     const [tagList, setTagList] = useState([]);
 
     useEffect(() => {
-
-      if(editCourse){
-        setTagList(course?.tag);
+      if (editCourse && course?.tag) {
+        setTagList(course.tag);  // Ensure course.tag exists before setting
       }
 
-        register(name, {
-            required: true,
-            validate: (value) => value.length > 0 || "Tag entry cannot be empty."
-        })
-    }, []);
+      register(name, {
+        required: true,
+        validate: (value) => value.length > 0 || "Tag entry cannot be empty."
+      });
+    }, [editCourse, course?.tag, name, register]);
+
 
     useEffect(() => {
       setValue(name, tagList);
@@ -72,7 +71,6 @@ const ChipInput = ({ label, name, placeholder, register, errors, setValue, getVa
         type='text'
         id={name}
         placeholder={placeholder}
-        onChange={(e) => setTag(e.target.value)}
         onKeyDown={tagHandler}
         className=' p-3 bg-richblack-700 text-richblack-5 rounded-lg w-full shadow-inset-white'
       />

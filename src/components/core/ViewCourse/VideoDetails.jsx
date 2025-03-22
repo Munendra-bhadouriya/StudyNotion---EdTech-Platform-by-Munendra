@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
-import { updateCompletedLectures } from '../../../slices/viewCourseSlice';
 import { BigPlayButton, Player } from 'video-react';
 import 'video-react/dist/video-react.css'; // import css
 import { MdOutlineReplay, MdSkipNext, MdSkipPrevious } from "react-icons/md";
@@ -9,15 +8,12 @@ import { MdOutlineReplay, MdSkipNext, MdSkipPrevious } from "react-icons/md";
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const location = useLocation();
   const playerRef = useRef();
-  const { token } = useSelector((state) => state.auth);
-  const { courseSectionData, completedLectures } = useSelector((state) => state.viewCourse);
+  const { courseSectionData } = useSelector((state) => state.viewCourse);
 
   const [videoData, setVideoData] = useState(null);
   const [videoEnded, setVideoEnded] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!courseSectionData.length) return;
@@ -32,7 +28,7 @@ const VideoDetails = () => {
       setVideoData(filteredVideo || null);
       setVideoEnded(false);
     }
-  }, [courseSectionData, location.pathname]);
+  }, [courseSectionData, location.pathname, courseId, navigate, sectionId, subSectionId]);
 
   const isFirstVideo = () => {
     const currentSectionIndex = courseSectionData.findIndex(data => data._id === sectionId);
@@ -79,21 +75,21 @@ const VideoDetails = () => {
         </div>
       ) : (
         <div className='w-full h-full relative'>
-          <Player ref={playerRef} aspectRatio="16:9" playsInline onEnded={() => setVideoEnded(true)} src={videoData?.videoUrl}>
+          <Player className="relative z-0" ref={playerRef} aspectRatio="16:9" playsInline onEnded={() => setVideoEnded(true)} src={videoData?.videoUrl}>
             <BigPlayButton position='center' />
           </Player>
           {videoEnded && (
-            <div className='absolute inset-0 flex justify-center items-center px-8 text-4xl text-white gap-6'>
+            <div className='absolute h-[calc(100%-2rem)] z-[1000] inset-0 grid grid-cols-3 items-center justify-center px-8 text-4xl text-white gap-48 '>
               {!isFirstVideo() && (
-                <button className='hover:scale-110 transition-transform' disabled={loading} onClick={goToPrevVideo}>
+                <button className=' w-full col-start-1 flex items-center justify-center' onClick={goToPrevVideo}>
                   <MdSkipPrevious />
                 </button>
               )}
-              <button className='hover:scale-110 transition-transform' onClick={() => { playerRef.current?.seek(0); playerRef.current?.play(); setVideoEnded(false); }} disabled={loading}>
+              <button className='w-full col-start-2 flex items-center justify-center' onClick={() => { playerRef.current?.seek(0); playerRef.current?.play(); setVideoEnded(false); }} >
                 <MdOutlineReplay />
               </button>
               {!isLastVideo() && (
-                <button className='hover:scale-110 transition-transform' disabled={loading} onClick={goToNextVideo}>
+                <button className='w-full col-start-3  flex items-center justify-center' onClick={goToNextVideo}>
                   <MdSkipNext />
                 </button>
               )}

@@ -19,7 +19,7 @@ const ProfileDropDown = () => {
   return (
     <button className='relative' onClick={() => setIsOpen(true)}>
       <div className='flex text-richblack-200 items-center cursor-pointer'>
-        <img width={30} height={30} className='aspect rounded-full' src={`${user?.image}`} />
+        <img alt='user' width={30} height={30} className='aspect rounded-full' src={`${user?.image}`} />
         <IoMdArrowDropdown className=' text-2xl'/>
       </div>
       {

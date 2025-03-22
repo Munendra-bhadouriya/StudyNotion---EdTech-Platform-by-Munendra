@@ -1,6 +1,5 @@
 import React from 'react'
 import HighlightText from '../../core/Home Page/HighlightText'
-import { Link } from 'react-router-dom';
 import CTAButton from '../Home Page/Button'
 const LearningGridArray = [
     {

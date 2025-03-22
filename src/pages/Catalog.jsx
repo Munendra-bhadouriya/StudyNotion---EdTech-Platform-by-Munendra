@@ -4,7 +4,6 @@ import Footer from '../components/core/common/Footer';
 import { apiConnector } from '../services/apiconnector';
 import { categories } from '../services/apis';
 import { getCatalogPageData } from '../services/operations/pageAndComponentData';
-import Course_Card from '../components/core/Catalog/Course_Card';
 import CourseSlider from '../components/core/Catalog/CourseSlider';
 
 

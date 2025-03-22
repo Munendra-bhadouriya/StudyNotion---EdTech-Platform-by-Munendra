@@ -6,7 +6,7 @@ import { updateProfile } from '../../../../services/operations/settingsAPI';
 
 const EditProfile = () => {
 
-    const {register, setValue, getValues, formState: {errors}, handleSubmit } = useForm();
+    const {register, formState: {errors}, handleSubmit } = useForm();
 
     const { user } = useSelector((state) => state.profile);
     const { token } = useSelector((state) => state.auth);

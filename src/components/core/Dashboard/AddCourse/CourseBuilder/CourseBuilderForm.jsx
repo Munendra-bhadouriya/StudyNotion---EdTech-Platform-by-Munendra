@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import IconBtn from '../../../common/IconBtn';
 import { MdAddCircleOutline, MdKeyboardArrowRight } from "react-icons/md";
@@ -13,16 +13,14 @@ import Button from '../../../Home Page/Button';
 
 const CourseBuilderForm = () => {
 
-    const { register, setValue, formState: { errors }, handleSubmit, getValues } = useForm();
+    const { register, setValue, formState: { errors }, handleSubmit } = useForm();
     const [editSectionName, setEditSectionName] = useState(null);
     const { course} = useSelector((state) => state.course);
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false);
     const { token } = useSelector((state) => state.auth);
 
     const onSubmit = async (data) => {
         
-        setLoading(true);
         let result;
 
         if (editSectionName) {

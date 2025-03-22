@@ -3,7 +3,7 @@ import { ACCOUNT_TYPE } from '../../../utils/constants'
 import Tab from '../common/Tab';
 import { PiEyeBold, PiEyeClosedBold } from "react-icons/pi";
 import toast from 'react-hot-toast';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {setSignupData} from '../../../slices/authSlice'
 import { useNavigate } from 'react-router-dom';
 import { sendOtp } from '../../../services/operations/authAPI';
@@ -12,8 +12,6 @@ const SignupForm = ({ btnContent }) => {
     const dispatch = useDispatch();
     const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
     const navigate = useNavigate();
-    
-    const signData = useSelector((state) => state.auth.signupData);
     
     const [formData, setFormData] = useState(
         {

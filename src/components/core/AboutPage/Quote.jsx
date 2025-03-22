@@ -1,7 +1,5 @@
 import React from 'react'
 import HighlightText from '../Home Page/HighlightText'
-import openQuote from '../../../assets/Images/opened quote.svg'
-import closeQuote from '../../../assets/Images/closed quote.svg'
 
 const Quote = () => {
     return (

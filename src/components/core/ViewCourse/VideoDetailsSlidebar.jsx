@@ -25,7 +25,6 @@ const VideoDetailsSlidebar = ({setReviewModal}) => {
   } = useSelector((state) => state.viewCourse);
 
   const location = useLocation();
-  const [loading, setLoading] = useState();
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [lecturesCompleted, setLecturesCompleted] = useState(completedLectures);
@@ -58,10 +57,9 @@ const VideoDetailsSlidebar = ({setReviewModal}) => {
       setVideoBarActive(activeSubSectionId);
 
     })();
-  }, [courseSectionData, courseEntireData, location.pathname])
+  }, [courseSectionData, courseEntireData, location.pathname, sectionId, subSectionId])
 
   const handleLectureCompletion = async () => {
-    setLoading(true);
     
     const res = await markLectureAsComplete(
       { courseId, subsectionId: subSectionId },
@@ -72,7 +70,6 @@ const VideoDetailsSlidebar = ({setReviewModal}) => {
       dispatch(updateCompletedLectures(subSectionId)); // Redux handles state update
     }
 
-    setLoading(false);
   };
 
   

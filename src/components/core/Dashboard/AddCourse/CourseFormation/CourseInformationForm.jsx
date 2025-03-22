@@ -50,7 +50,7 @@ const CourseInformationForm = () => {
       setValue("courseImage", course.thumbnail);
     }
     getCategories();  
-  }, [])
+  }, [editCourse, course, setValue])
 
   const isFormUpdated = () => {
     const currentValues = getValues();

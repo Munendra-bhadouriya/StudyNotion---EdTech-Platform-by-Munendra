@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import IconBtn from '../common/IconBtn'
-import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import CourseTable from './InstructorCourses/CourseTable'
 import { fetchInstructorCourses } from '../../../services/operations/courseDetailsAPI'
@@ -8,7 +6,6 @@ import { fetchInstructorCourses } from '../../../services/operations/courseDetai
 const MyCourses = () => {
 
     const { token } = useSelector((state) => state.auth);
-    const navigate = useNavigate();
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
@@ -20,7 +17,7 @@ const MyCourses = () => {
             }
         }
         fetchCourses();
-    }, [])
+    }, [token])
 
   return (
     <div className='w-full -mt-5 mb-10'>
