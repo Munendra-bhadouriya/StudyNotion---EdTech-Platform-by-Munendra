@@ -58,9 +58,74 @@ StudyNotion is a full-stack EdTech platform built using the MERN stack (MongoDB,
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/studynotion.git
-cd studynotion
+https://github.com/Munendra-bhadouriya/StudyNotion---EdTech-Platform-by-Munendra.git
+cd StudyNotion---EdTech-Platform-by-Munendra
+```
 
+### 2. Setup Environment Variables
+Create .env files in both the **server**(backend) and **StudyNotion---EdTech-Platform-by-Munendra**(frontend) folders.
+
+**Backend/.env**
+```bash
+DATABASE_URL = "mongodb+srv://<username>:<password>@cluster0.w8js9.mongodb.net/StudyNotion?retryWrites=true&w=majority&appName=Cluster0"
+PORT = 4000
+
+CLOUD_NAME = <your_cloud_name>
+API_KEY = <your_api_key>
+API_SECRET = <your_api_secret>
+
+MAIL_HOST = smtp.gmail.com
+MAIL_USER = <your_email>
+MAIL_PASS = <your_email_password>
+
+JWT_SECRET = "<your_jwt_secret>"
+FOLDER_NAME = "StudyNotion"
+
+RAZORPAY_KEY = <your_razorpay_key>
+RAZORPAY_SECRET = <your_razorpay_secret>
+
+```
+**Frontend/.env**
+```bash
+REACT_APP_BASE_URL = <your_backend_base_url>
+RAZORPAY_KEY = <your_razorpay_key>
+```
+
+### 3. Install Dependencies
+
+**For Backend**
+
+```bash
+cd server
+npm install
+```
+
+**For Frontend**
+
+```bash
+cd StudyNotion---EdTech-Platform-by-Munendra
+npm install
+```
+
+**Run the Project**
+
+In one terminal, start the backend:
+```bash
+cd server
+npm start
+```
+
+In another terminal, start the frontend:
+
+```bash
+cd StudyNotion---EdTech-Platform-by-Munendra
+npm start
+```
+Open your browser and navigate to:
+
+```bash
+http://localhost:3000
+```
 
 ## Project Description
 
@@ -270,3 +335,6 @@ requests and responses provided above illustrate how each endpoint will function
 what kind of data it will accept or return. With this API design, StudyNotion will be able to
 provide a smooth user experience while ensuring security and stability.
 
+
+👨‍💻 Developed By
+Munendra Singh Bhadouriya
