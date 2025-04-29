@@ -1,6 +1,66 @@
 # StudyNotion Online Education Platform (MERN App) [Website Link](https://studynotion-munendra.vercel.app/)
 
+## 📸 Screenshots
+
+### Homepage
 ![Main Page](images/mainpage.png)
+
+### Course Page
+![Course Page](images/course.png)
+
+### Features
+![Instructor Dashboard](images/features.png)
+
+
+# 📚 StudyNotion - An EdTech Platform
+
+StudyNotion is a full-stack EdTech platform built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). It allows users to create, consume, and rate educational content. The platform supports user authentication, role-based dashboards, secure payments, and course management.
+
+---
+
+## 🚀 Features
+
+- 🔐 User Authentication (Login/Signup)
+- 👥 Role-based Dashboard (Student / Instructor)
+- 🎓 Course Creation, Management & Enrollment
+- 📹 Video Lectures & Content Viewing
+- 💳 Payment Gateway Integration (Razorpay)
+- 📊 Progress Tracking & Ratings/Reviews
+- 🛠 Admin Panel for Management
+- 💻 Responsive UI using TailwindCSS
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend:
+- React.js
+- Redux Toolkit
+- TailwindCSS
+- React Router DOM
+
+### Backend:
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+
+### External Services & Tools:
+- Razorpay (Payment)
+- Cloudinary (Media Uploads)
+- Multer (File Handling)
+- Dotenv (Environment Config)
+
+---
+
+## 🧩 Setup & Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/studynotion.git
+cd studynotion
+
 
 ## Project Description
 
